@@ -37,6 +37,12 @@ list(APPEND WebKit2_INCLUDE_DIRECTORIES
     "${WEBKIT2_DIR}/WebProcess/qt"
 )
 
+if (APPLE)
+    list(APPEND WebKit2_INCLUDE_DIRECTORIES
+        "${WEBCORE_DIR}/icu"
+    )
+endif ()
+
 list(APPEND WebKit2_SOURCES
     NetworkProcess/CustomProtocols/qt/CustomProtocolManagerImpl.cpp
     NetworkProcess/CustomProtocols/qt/CustomProtocolManagerQt.cpp

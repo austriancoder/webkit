@@ -36,7 +36,9 @@ class ArgumentDecoder;
 class ArgumentEncoder;
 }
 
+#if !PLATFORM(QT)
 OBJC_CLASS NSData;
+#endif
 
 namespace API {
 
