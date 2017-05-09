@@ -326,6 +326,7 @@ endif ()
 if (NOT SHARED_CORE)
     qt5_add_resources(WebKit_SOURCES
         "${WEBCORE_DIR}/WebCore.qrc"
+        "${WEBCORE_DIR}/pdf.js.qrc"
     )
 
     if (ENABLE_INSPECTOR_UI)

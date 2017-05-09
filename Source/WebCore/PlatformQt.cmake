@@ -160,6 +160,9 @@ list(APPEND WebCore_SOURCES
     platform/text/hyphen/HyphenationLibHyphen.cpp
 
     platform/text/qt/TextBreakIteratorInternalICUQt.cpp
+
+    Modules/plugins/PdfPluginReplacement.cpp
+    html/shadow/PdfEmbedShadowElement.cpp
 )
 
 if (COMPILER_IS_GCC_OR_CLANG)
@@ -406,6 +409,10 @@ WEBKIT_CREATE_FORWARDING_HEADERS(WebCore DIRECTORIES ${WebCore_FORWARDING_HEADER
 
 list(APPEND WebCoreTestSupport_LIBRARIES
     WebCore
+)
+
+list(APPEND WebCore_USER_AGENT_SCRIPTS
+    ${WEBCORE_DIR}/Modules/plugins/PdfPluginReplacement.js
 )
 
 if (HAVE_FONTCONFIG)

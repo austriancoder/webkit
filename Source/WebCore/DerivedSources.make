@@ -1005,11 +1005,11 @@ UserAgentStyleSheets.h : css/make-css-file-arrays.pl bindings/scripts/preprocess
 
 # user agent scripts
 
-USER_AGENT_SCRIPTS = 
+USER_AGENT_SCRIPTS =
 
-ifeq ($(OS),MACOS)
-	USER_AGENT_SCRIPTS := $(USER_AGENT_SCRIPTS) $(WebCore)/Modules/plugins/QuickTimePluginReplacement.js
-endif
+#ifeq ($(OS),MACOS)
+	USER_AGENT_SCRIPTS := $(USER_AGENT_SCRIPTS) $(WebCore)/Modules/plugins/PdfPluginReplacement.js
+#endif
 
 ifdef USER_AGENT_SCRIPTS
 all : UserAgentScripts.h
@@ -1363,4 +1363,3 @@ WebCoreHeaderDetection.h : $(WebCore)/AVFoundationSupport.py DerivedSources.make
 	$(PYTHON) $(WebCore)/AVFoundationSupport.py $(WEBKIT_LIBRARIES) > $@
 
 endif # Windows_NT
-

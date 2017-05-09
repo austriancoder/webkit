@@ -1,0 +1,18 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pdf.js/LICENSE</file>
+        <file>pdf.js/build</file>
+        <file>pdf.js/web/compatibility.js</file>
+        <file>pdf.js/web/debugger.js</file>
+        <file>pdf.js/web/l10n.js</file>
+        <file>pdf.js/web/viewer.css</file>
+        <file>pdf.js/web/viewer.html</file>
+        <file>pdf.js/web/viewer.js</file>
+        <file>pdf.js/web/images</file>
+        <file>pdf.js/web/cmaps</file>
+        <file>pdf.js/web/locale/locale.properties</file>
+        <file>pdf.js/web/locale/en-US</file>
+        <file>pdf.js/web/locale/zh-CN</file>
+        <file>pdf.js/web/locale/de</file>
+    </qresource>
+</RCC>

@@ -57,7 +57,7 @@ RuntimeEnabledFeatures::RuntimeEnabledFeatures()
 #if PLATFORM(IOS)
     , m_isPluginReplacementEnabled(true)
 #else
-    , m_isPluginReplacementEnabled(false)
+    , m_isPluginReplacementEnabled(true)
 #endif
 #if ENABLE(MEDIA_STREAM)
     , m_isMediaStreamEnabled(true)

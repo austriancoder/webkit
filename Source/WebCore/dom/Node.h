@@ -82,7 +82,7 @@ class PlatformGestureEvent;
 #if ENABLE(INDIE_UI)
 class UIRequestEvent;
 #endif
-    
+
 #if ENABLE(TOUCH_EVENTS) && !PLATFORM(IOS)
 class TouchEvent;
 #endif
@@ -94,10 +94,10 @@ const int nodeStyleChangeShift = 14;
 // SyntheticStyleChange means that we need to go through the entire style change logic even though
 // no style property has actually changed. It is used to restructure the tree when, for instance,
 // RenderLayers are created or destroyed due to animation changes.
-enum StyleChangeType { 
-    NoStyleChange = 0, 
-    InlineStyleChange = 1 << nodeStyleChangeShift, 
-    FullStyleChange = 2 << nodeStyleChangeShift, 
+enum StyleChangeType {
+    NoStyleChange = 0,
+    InlineStyleChange = 1 << nodeStyleChangeShift,
+    FullStyleChange = 2 << nodeStyleChangeShift,
     SyntheticStyleChange = 3 << nodeStyleChangeShift,
     ReconstructRenderTree = 4 << nodeStyleChangeShift,
 };
@@ -187,7 +187,7 @@ public:
     Node* pseudoAwareLastChild() const;
 
     URL baseURI() const;
-    
+
     void getSubresourceURLs(ListHashSet<URL>&) const;
 
     // These should all actually return a node, but this is only important for language bindings,
@@ -220,10 +220,10 @@ public:
     String lookupPrefix(const AtomicString& namespaceURI) const;
     String lookupNamespaceURI(const String& prefix) const;
     String lookupNamespacePrefix(const AtomicString& namespaceURI, const Element* originalElement) const;
-    
+
     WEBCORE_EXPORT String textContent(bool convertBRsToNewlines = false) const;
     WEBCORE_EXPORT void setTextContent(const String&, ExceptionCode&);
-    
+
     Node* lastDescendant() const;
     Node* firstDescendant() const;
 
@@ -411,8 +411,8 @@ public:
 
     // Returns true if this node is associated with a document and is in its associated document's
     // node tree, false otherwise.
-    bool inDocument() const 
-    { 
+    bool inDocument() const
+    {
         return getFlag(InDocumentFlag);
     }
     bool isInUserAgentShadowTree() const;
@@ -463,7 +463,7 @@ public:
     // Use these two methods with caution.
     WEBCORE_EXPORT RenderBox* renderBox() const;
     RenderBoxModelObject* renderBoxModelObject() const;
-    
+
     // Wrapper for nodes that don't have a renderer, but still cache the style (like HTMLOptionElement).
     RenderStyle* renderStyle() const;
 
@@ -647,19 +647,19 @@ protected:
     };
 
     bool getFlag(NodeFlags mask) const { return m_nodeFlags & mask; }
-    void setFlag(bool f, NodeFlags mask) const { m_nodeFlags = (m_nodeFlags & ~mask) | (-(int32_t)f & mask); } 
-    void setFlag(NodeFlags mask) const { m_nodeFlags |= mask; } 
+    void setFlag(bool f, NodeFlags mask) const { m_nodeFlags = (m_nodeFlags & ~mask) | (-(int32_t)f & mask); }
+    void setFlag(NodeFlags mask) const { m_nodeFlags |= mask; }
     void clearFlag(NodeFlags mask) const { m_nodeFlags &= ~mask; }
 
     enum ConstructionType {
         CreateOther = DefaultNodeFlags,
         CreateText = DefaultNodeFlags | IsTextFlag,
-        CreateContainer = DefaultNodeFlags | IsContainerFlag, 
-        CreateElement = CreateContainer | IsElementFlag, 
+        CreateContainer = DefaultNodeFlags | IsContainerFlag,
+        CreateElement = CreateContainer | IsElementFlag,
         CreatePseudoElement =  CreateElement | InDocumentFlag,
         CreateShadowRoot = CreateContainer | IsDocumentFragmentFlag | IsInShadowTreeFlag,
         CreateDocumentFragment = CreateContainer | IsDocumentFragmentFlag,
-        CreateStyledElement = CreateElement | IsStyledElementFlag, 
+        CreateStyledElement = CreateElement | IsStyledElementFlag,
         CreateHTMLElement = CreateStyledElement | IsHTMLFlag,
         CreateSVGElement = CreateStyledElement | IsSVGFlag | HasCustomStyleResolveCallbacksFlag,
         CreateDocument = CreateContainer | InDocumentFlag,
@@ -669,7 +669,7 @@ protected:
     Node(Document&, ConstructionType);
 
     virtual void didMoveToNewDocument(Document* oldDocument);
-    
+
     virtual void addSubresourceAttributeURLs(ListHashSet<URL>&) const { }
 
     bool hasRareData() const { return getFlag(HasRareDataFlag); }
